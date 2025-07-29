@@ -1,0 +1,109 @@
+---
+# Common schema components
+
+DateIso:
+  description: A date string (without time) in ISO format.
+  type: string
+  format: date
+  example: "2025-04-01"
+
+DateTimeIso:
+  description: A date-time string, in ISO format.
+  type: string
+  example: "2025-04-01T17:32:28Z"
+
+EmailAddress:
+  description: Email address as it exists in the system.
+  type: string
+  format: email
+  example: "ada_lovelace@example.com"
+
+PhoneNumber:
+  description: User phone number
+  type: string
+  example: "+15555555555"
+
+JwtToken:
+  description: JWT token.
+  type: string
+  example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30"
+
+Language:
+  description: Information about the language an application supports.
+  type: object
+  properties:
+    id:
+      $ref: "#/LanguageId"
+    code:
+      $ref: "#/LanguageCode"
+    name:
+      $ref: "#/LanguageName"
+
+
+LanguageId:
+  description: Language ID in the system.
+  type: string
+  format: uuid
+  example: "1a5b7093-0d5e-4cc2-8e99-259d272b143c"
+
+LanguageCode:
+  type: string
+  example: "en-us"
+
+LanguageName:
+  type: string
+  example: "English (United States)"
+
+Region:
+  description: Information about a region the application is served from
+  type: object
+  properties:
+    id:
+      $ref: "#/RegionId"
+    code:
+      $ref: "#/RegionCode"
+    name:
+      $ref: "#/RegionName"
+
+RegionCode:
+  type: string
+  example: "US"
+
+RegionId:
+  type: string
+  format: uuid
+  example: "8b8cb695-63eb-4ba2-b262-912c6cd8cb79"
+
+RegionName:
+  type: string
+  example: "United States of America"
+
+Url:
+  description: A URL.
+  type: string
+  example: "https://example.com"
+
+UUID:
+  type: string
+  format: uuid
+
+NullableDateTime:
+  type: string
+  format: date-time
+  nullable: true
+
+Boolean:
+  type: boolean
+
+NullableInteger:
+  type: integer
+  nullable: true
+
+Time:
+  type: string
+  format: time
+
+NullableTime:
+  type: string
+  format: time
+  nullable: true
