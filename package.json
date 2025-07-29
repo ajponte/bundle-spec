@@ -1,0 +1,12 @@
+{
+  "name": "api-spec-bundle",
+  "version": "0.0.1",
+  "main": "spec/tools/bundleModularSchema.js",
+  "dependencies": {
+    "@redocly/cli": "^1.31.3",
+    "jszip": "^3.10.1"
+  },
+  "scripts": {
+    "bundle-modular-schema": "node spec/tools/bundleModularSchema.js"
+  }
+}
