@@ -1,0 +1,105 @@
+---
+echoResponse:
+  description: "echoed response"
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            type: string
+  HttpBadRequestResponse:
+  description: "400 - Bad Request"
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpNotFoundResponse:
+  description: "404 - Resource not found"
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpNoContentResponse:
+  description: "204 - No Content"
+  content:
+    application/json:
+      schema:
+        type: object
+        nullable: true
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpForbiddenResponse:
+  description: "403 - Required permssions not present."
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpUnauthorizedResponse:
+  description: "401 - Not Authorized to perform this action"
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpOKResponse:
+  description: "200 - OK"
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpBadGatewayResponse:
+  description: "502- Bad Gateway"
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpInternalServerErrorResponse:
+  description: "500 - Internal Server Error"
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          message:
+            description: "Message for debugging"
+            type: string
+
+HttpMeResponse:
+  description: "200 - Return information about the logged in user."
+  content:
+    application/json:
+      schema:
+        $ref: "./models/User.yml#/UserMeData"
