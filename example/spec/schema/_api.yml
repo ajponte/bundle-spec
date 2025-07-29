@@ -4,7 +4,7 @@ info:
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
-  title: "GFA Gateway API"
+  title: "My API Spec"
   description: "My super awesome API."
   version: "0.0.1"
 servers:
@@ -25,6 +25,7 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT # optional, arbitrary value for documentation purposes
-      x-bearerInfoFunc: gateway.app.decode_token
+      # Path to where the decode logic lives
+      x-bearerInfoFunc: src.app.decode_token
   responses:
     $ref: "./components/responses.yml"
