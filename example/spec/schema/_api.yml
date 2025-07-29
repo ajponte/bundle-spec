@@ -1,0 +1,30 @@
+
+openapi: "3.0.0"
+info:
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: "GFA Gateway API"
+  description: "My super awesome API."
+  version: "0.0.1"
+servers:
+  - url: /api
+
+security:
+  - bearerAuth: [] # Apply API key security globally to all operations
+
+paths:
+  /echo:
+    $ref: "./paths/v1/Echo.yaml"
+  /v1/users/me:
+    $ref: "./paths/v1/Me.yml"
+
+components:
+  securitySchemes:
+    bearerAuth: # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT # optional, arbitrary value for documentation purposes
+      x-bearerInfoFunc: gateway.app.decode_token
+  responses:
+    $ref: "./components/responses.yml"
