@@ -18,6 +18,10 @@ spec/schema/src/main/swagger
 To visualize the schema, you can build the bundle (see `./bundle.sh`),
 and copied the compiled output to https://editor.swagger.io/
 
+### Redocly
+This project uses Redocly's NVM package as a utility for bundling the spec.
+For more information on Redocly, see https://redocly.com/
+
 ### OperationId
 Every path corresponds with an `operationId`
 e.g.
