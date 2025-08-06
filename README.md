@@ -26,7 +26,7 @@ For more information on Redocly, see https://redocly.com/
 Every path corresponds with an `operationId`
 e.g.
 ```
-operationId: "gateway.controllers.vehicles.vehicles_patch"
+operationId: "gateway.controllers.users.user_patch"
 ```
 where `gateway.controllers.vehicles.vehicles_patch` is the method to bind to the API.
 
