@@ -17,7 +17,7 @@ jobs:
           node -v
           echo "This is a simple Node.js command without a package.json"
           node -e "console.log('Hello from Node.js!')"
-      - name: Alternative approach - Using nvm directly
+      - name: Alternative approach - Using nvm directly...
         run: |
           # This approach may be less reliable in some runners
           # actions/setup-node is the preferred method
