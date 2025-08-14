@@ -21,6 +21,11 @@ jobs:
           # Load nvm to make its commands available in this step
           export NVM_DIR="$HOME/.nvm"
           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+      - name: Build spec
+        run: |
+          echo "Invoking script"
+          sh bundle.sh
+          echo "Done building spec"
       # - name: Run a Node.js script
       #   run: |
       #     # This script doesn't need a package.json
