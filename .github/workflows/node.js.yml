@@ -1,6 +1,9 @@
-name: Node.js with nvm-like behavior
+name: bundle-spec
 on:
   push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
