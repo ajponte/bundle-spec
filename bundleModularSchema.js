@@ -5,7 +5,7 @@ const util = require('util');
 const execPromise = util.promisify(exec);
 
 // Your spec file. This path is a best-practice suggestion but can be modified.
-const SCHEMA_API_SOURCE_PATH = 'spec/schema/src/main/swagger';
+const SCHEMA_API_SOURCE_PATH = 'example/spec/schema/src/main/swagger';
 // Spec file main file.
 const SCHEMA_API_SOURCE_FILE = '_api.yml';
 const SCHEMA_BUNDLE_PATH = 'spec/.bundle'

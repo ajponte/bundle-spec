@@ -5,6 +5,10 @@ UserId:
   format: uuid
   example: "0e558add-9774-407f-8c58-4f0b818ad9a0"
 
+UserRole:
+  description: "Some user role identifier."
+  example: "ADMIN"
+
 UserCanonicalName:
   description: "User Canonical Name"
   type: string
@@ -36,7 +40,7 @@ UserContactInfo:
           type: object
           properties:
             value:
-              $ref: "../schemas.yml#/PhoneNumber"
+              $ref: "../models/schemas.yml#/PhoneNumber"
             rank:
               type: integer
               example: 1
@@ -44,7 +48,7 @@ UserContactInfo:
           type: object
           properties:
             value:
-              $ref: "../schemas.yml#/PhoneNumber"
+              $ref: "../models/schemas.yml#/PhoneNumber"
             rank:
               type: integer
               example: 2
@@ -53,47 +57,7 @@ UserContactInfo:
           properties:
             value:
               type: string
-              $ref: "../schemas.yml#/EmailAddress"
-            rank:
-              type: integer
-              example: 3
-
-UserContactMethod:
-  description: Contact channel.
-  type: string
-  enum:
-    - EMAIL
-    - PHONE
-
-UserContactInfo:
-  description: User contact info
-  type: object
-  properties:
-    contactMethods:
-      type: object
-      properties:
-        SMS:
-          type: object
-          properties:
-            value:
-              $ref: "../schemas.yml#/PhoneNumber"
-            rank:
-              type: integer
-              example: 1
-        PHONE:
-          type: object
-          properties:
-            value:
-              $ref: "../schemas.yml#/PhoneNumber"
-            rank:
-              type: integer
-              example: 2
-        EMAIL:
-          type: object
-          properties:
-            value:
-              type: string
-              $ref: "../schemas.yml#/EmailAddress"
+              $ref: "../models/schemas.yml#/EmailAddress"
             rank:
               type: integer
               example: 3
@@ -106,7 +70,7 @@ UserContactMethod:
     - PHONE
 
 UserMeData:
-  description: Response object for GFA me quiries.
+  description: Response object for `/me` quiries.
   type: object
   properties:
     id:
@@ -116,38 +80,26 @@ UserMeData:
     contactInfo:
       $ref: "#/UserContactInfo"
     dateCreated:
-      $ref: "../schemas.yml#/DateTimeIso"
+      $ref: "../models/schemas.yml#/DateTimeIso"
     dateUpdated:
-      $ref: "../schemas.yml#/DateTimeIso"
+      $ref: "../models/schemas.yml#/DateTimeIso"
     dateDeleted:
       nullable: true
-      $ref: "../schemas.yml#/DateTimeIso"
+      $ref: "../models/schemas.yml#/DateTimeIso"
     firstName:
       $ref: "#/UserFirstName"
     lastName:
       $ref: "#/UserLastName"
     region:
-      $ref: "../schemas.yml#/Region"
+      $ref: "../models/schemas.yml#/Region"
     language:
-      $ref: "../schemas.yml#/Language"
-    reset:
-      $ref: "#/UserResetInfo"
+      $ref: "../models/schemas.yml#/Language"
     roles:
       type: array
       items:
         $ref: "#/UserRole"
-    invite:
-      nullable: true
-      $ref: "./Invite.yml#/InviteInfo"
-    isDryRun:
-      # todo: Is this needed in GFA?
-      type: boolean
-      default: false
     status:
       $ref: "#/UserStatus"
-    locationId:
-      nullable: true
-      $ref: "./Location.yml#/LocationId"
   required:
     - id
     - region
@@ -157,6 +109,7 @@ UserMeData:
     - termsAndConditionsAcceptance
 
 UserStatus:
+  description: "Some user status."
   type: string
   enum:
     - ACTIVE

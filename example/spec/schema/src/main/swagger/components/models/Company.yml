@@ -1,0 +1,12 @@
+---
+CompanyData:
+  # Add properties as needed for business use case.
+  properties:
+    id:
+      $ref: "#/CompanyId"
+
+CompanyId:
+  description: Some unique identifier for a company.
+  type: string
+  format: uuid
+  example: "f68110a6-9d20-4d2f-b212-109bfe92c880"
