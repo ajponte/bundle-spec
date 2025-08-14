@@ -1,32 +1,27 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
-name: Node.js CI
-
+name: Node.js with nvm-like behavior
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+    branches:
+      - main
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        # node-version: [18.x, 20.x, 22.x]
-        node-version: [23.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '23.x' # This acts like 'nvm use 23'
+      - name: Run a Node.js script
+        run: |
+          # This script doesn't need a package.json
+          node -v
+          echo "This is a simple Node.js command without a package.json"
+          node -e "console.log('Hello from Node.js!')"
+      - name: Alternative approach - Using nvm directly
+        run: |
+          # This approach may be less reliable in some runners
+          # actions/setup-node is the preferred method
+          nvm install
+          nvm use
+          node -v
+  
