@@ -8,7 +8,8 @@ echoResponse:
         properties:
           message:
             type: string
-  HttpBadRequestResponse:
+
+HttpBadRequestResponse:
   description: "400 - Bad Request"
   content:
     application/json:
@@ -97,7 +98,7 @@ HttpInternalServerErrorResponse:
             description: "Message for debugging"
             type: string
 
-HttpMeResponse:
+HttpUserMeResponse:
   description: "200 - Return information about the logged in user."
   content:
     application/json:

@@ -26,9 +26,9 @@ For more information on Redocly, see https://redocly.com/
 Every path corresponds with an `operationId`
 e.g.
 ```
-operationId: "gateway.controllers.users.user_patch"
+operationId: "<src.method>"
 ```
-where `gateway.controllers.vehicles.vehicles_patch` is the method to bind to the API.
+where `<src.method>` is the method to bind to the API such that `src.method` is a valid path.
 
 
 ## API SPEC TOOLS
@@ -37,7 +37,20 @@ where `gateway.controllers.vehicles.vehicles_patch` is the method to bind to the
 * `Node > v23.7.0`
 
 ### Bundle API Spec
-* `bundlejs` will bundleModularSchema all API spec modules into `packagename.json`.
+#### NVM
+This project uses `nvm` package management. The following commands will assume a node environment
+whose node verision is defined from values in `.nvmrc`
+
+```shell
+    nvm install
+    nvm use
+```
+
+##### Building the Example
+By default, the spec will be placed in `spec/.bundle/` with default artifact names.
+See the following to track a better way at handling the parameters: https://github.com/ajponte/bundle-spec/issues/1
+
+when `bundle.sh` is invoked, a `<EXAMPLE>.yml` and `<EXAMPLE>.json` will be built.
 
 #### Importing into a Python backend
   * This single file can be consumed by connexion `3`.
