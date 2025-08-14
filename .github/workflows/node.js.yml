@@ -1,8 +1,7 @@
 name: Node.js with nvm-like behavior
 on:
   push:
-    branches:
-      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
