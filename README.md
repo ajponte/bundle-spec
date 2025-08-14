@@ -1,3 +1,5 @@
+[![bundle-spec](https://github.com/ajponte/bundle-spec/actions/workflows/node.js.yml/badge.svg)](https://github.com/ajponte/bundle-spec/actions/workflows/node.js.yml)
+
 # bundle-spec
 A nodejs utility to bundle a modular OpenAPI spec into a single file.
 
