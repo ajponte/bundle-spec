@@ -26,17 +26,3 @@ jobs:
           echo "Invoking script"
           sh bundle.sh
           echo "Done building spec"
-      # - name: Run a Node.js script
-      #   run: |
-      #     # This script doesn't need a package.json
-      #     node -v
-      #     echo "This is a simple Node.js command without a package.json"
-      #     node -e "console.log('Hello from Node.js!')"
-      # - name: Alternative approach - Using nvm directly...
-      #   run: |
-      #     # This approach may be less reliable in some runners
-      #     # actions/setup-node is the preferred method
-      #     nvm install
-      #     nvm use
-      #     node -v
-  
